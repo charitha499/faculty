@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ department }} Faculty</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <h1>{{ department }} Faculty</h1>
+    <ul>
+        {% for faculty in faculties %}
+        <li>{{ faculty[1] }} - {{ faculty[2] }} - {{ faculty[3] }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('home') }}">Back to Home</a>
+</body>
+</html>

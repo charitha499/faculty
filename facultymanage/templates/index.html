@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Faculty Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Faculty Management System</h1>
+
+    <!-- Display logged-in user's name -->
+    <p>Welcome, <strong>{{ session['username'] }}</strong>! 
+       <a href="{{ url_for('logout') }}" style="color: red;">Logout</a></p>
+
+    <!-- Display total faculty count -->
+    <p>Total Faculty Members: <strong>{{ faculty_count }}</strong></p>
+
+    <!-- Add New Faculty Link -->
+    <a href="/add" style="margin-bottom: 20px; display: inline-block;">Add New Faculty</a>
+
+    <!-- Department Section -->
+    <h2>Departments</h2>
+    <ul>
+        {% for department in departments %}
+        <li>
+            <a href="{{ url_for('department_faculty', department=department[0]) }}">{{ department[0] }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <!-- Faculty Table -->
+    <h2>All Faculty Members</h2>
+    <table border="1" style="width: 100%; border-collapse: collapse;">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for faculty in faculties %}
+            <tr>
+                <td>{{ faculty[0] }}</td>
+                <td>{{ faculty[1] }}</td>
+                <td>{{ faculty[2] }}</td>
+                <td>{{ faculty[3] }}</td>
+                <td>
+                    <a href="/update/{{ faculty[0] }}">Edit</a> | 
+                    <a href="/delete/{{ faculty[0] }}" style="color: red;">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

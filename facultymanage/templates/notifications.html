@@ -1,0 +1,32 @@
+<!-- notifications.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Notifications</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Notification List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Subject</th>
+                <th>Body</th>
+                <th>Recipient</th>
+                <th>Date Sent</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for notification in notifications %}
+            <tr>
+                <td>{{ notification[1] }}</td>
+                <td>{{ notification[2] }}</td>
+                <td>{{ notification[3] }}</td>
+                <td>{{ notification[4] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

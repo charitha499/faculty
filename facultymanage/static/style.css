@@ -1,0 +1,123 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff; /* Light blue background */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+h1 {
+    color: #003366; /* Dark blue */
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+/* Table Styles */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #ffffff; /* White table background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 8px;
+}
+
+table th, table td {
+    border: 1px solid #cccccc;
+    padding: 12px;
+    text-align: center;
+}
+
+table th {
+    background-color: #003366; /* Dark blue */
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #e6f7ff; /* Light blue rows */
+}
+
+table tr:hover {
+    background-color: #cceeff; /* Hover effect */
+}
+
+/* Form Styles */
+form {
+    background-color: #ffffff;
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    font-weight: bold;
+    color: #003366;
+    display: block;
+    margin-bottom: 8px;
+}
+
+form input, form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+form input:focus {
+    border-color: #003366;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 51, 102, 0.5);
+}
+
+form button {
+    background-color: #003366; /* Dark blue */
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #00509e; /* Slightly brighter blue */
+}
+
+/* Link Styles */
+a {
+    color: #003366;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Container for Centering */
+.container {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+
+/* Form Messages */
+.flash-message {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+}
+
+.flash-message.success {
+    color: green;
+}
